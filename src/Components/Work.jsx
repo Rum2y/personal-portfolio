@@ -37,6 +37,7 @@ export default function Work() {
       name: "MecSimCalc",
       img: "/img/mec.png",
       desc: `Collaborated on developing an AI tool for creating apps using <span style="color: #C69749;">TypeScript</span> and <span style="color: #C69749;">React</span> on the MecSimCalc platform.`,
+      weblink: "https://mecsimcalc.com/",
     },
     {
       name: "SPE Ualberta",
@@ -47,6 +48,7 @@ export default function Work() {
       name: "Ravon Ecommerce",
       img: "/img/ravon.png",
       desc: `On this ecommerce site, you can buy items, add items to wishlist, and more. It was made using <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>, <span style="color: #C69749;">Node</span>, and <span style="color: #C69749;">Bootstrap</span>.`,
+      weblink: "https://ravon-ecommerce.netlify.app/#",
     },
   ];
 
@@ -80,38 +82,40 @@ export default function Work() {
       <div className="">
         <Slider {...settings}>
           {webDev.map((el, index) => (
-            <Card
-              key={index}
-              sx={{
-                boxShadow: "none",
-                border: "none",
-                backgroundColor: "transparent",
-              }}
-            >
-              <CardActionArea sx={{ padding: "0 20px" }}>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={el.img}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{ color: "#B0B0B0" }}
-                  >
-                    {el.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "#E0E0E0", fontSize: "1.125rem" }}
-                    dangerouslySetInnerHTML={{ __html: el.desc }}
+            <a href={el?.weblink} target="_blank" className="no-underline">
+              <Card
+                key={index}
+                sx={{
+                  boxShadow: "none",
+                  border: "none",
+                  backgroundColor: "transparent",
+                }}
+              >
+                <CardActionArea sx={{ padding: "0 20px" }}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={el.img}
+                    alt="green iguana"
                   />
-                </CardContent>
-              </CardActionArea>
-            </Card>
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      sx={{ color: "#B0B0B0" }}
+                    >
+                      {el.name}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "#E0E0E0", fontSize: "1.125rem" }}
+                      dangerouslySetInnerHTML={{ __html: el.desc }}
+                    />
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </a>
           ))}
         </Slider>
       </div>
