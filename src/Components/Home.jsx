@@ -5,11 +5,14 @@ export default function Home() {
     <Framer>
       <div className="mb-[10rem]" id="Home">
         <div className="mt-[4rem] xs:w-full lg:w-3/4">
-          <h1 className="text-[#E0E0E0] xs:text-[2.5rem] lg:text-[4rem] lg:leading-[4.5rem] xl:text-[6rem] font-light xs:leading-[3rem] xl:leading-[7rem] xs:text-center lg:text-left">
-            PETROLEUM ENGINEER & FRONT-END WEB DEVELOPER
+          <h4 className="text-[#C69749] font-medium text-2xl mb-2 xs:text-center lg:text-left">
+            Hi, I am Adejumo Iyinoluwa,
+          </h4>
+          <h1 className="text-[#E0E0E0] xs:text-[2.5rem] lg:text-[4rem] lg:leading-[4.5rem] xl:text-[5.5rem] font-[350] xs:leading-[3rem] xl:leading-[6rem] xs:text-center lg:text-left">
+            PETROLEUM ENGINEER & FRONTEND WEB DEVELOPER
           </h1>
         </div>
-        <div className="xs:w-full xl:w-[60%] mt-[5rem]">
+        <div className="xs:w-full xl:w-[60%] mt-[6rem]">
           <h4 className="text-[#C69749] font-medium text-xl mb-2">About Me</h4>
           <p className="text-[#E0E0E0] text-lg">
             I am a passionate and driven individual with four years of academic
