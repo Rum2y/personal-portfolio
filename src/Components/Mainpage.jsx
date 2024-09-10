@@ -126,9 +126,9 @@ function MainPage() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ ml: 0, display: { sm: "none" } }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ fontSize: "2rem" }} />
           </IconButton>
           <div className="w-full flex xs:justify-end lg:justify-between">
             <Typography

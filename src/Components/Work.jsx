@@ -19,7 +19,7 @@ export default function Work() {
     swipeToSlide: true,
     autoplay: true,
     speed: 4000,
-    autoplaySpeed: 200,
+    autoplaySpeed: 100,
     cssEase: "linear",
     pauseOnHover: true,
     responsive: [
@@ -27,6 +27,7 @@ export default function Work() {
         breakpoint: 1280,
         settings: {
           slidesToShow: 1,
+          speed: 6000,
         },
       },
     ],
@@ -36,13 +37,13 @@ export default function Work() {
     {
       name: "MecSimCalc",
       img: "/img/mec.png",
-      desc: `Collaborated on developing an AI tool for creating apps using <span style="color: #C69749;">TypeScript</span> and <span style="color: #C69749;">React</span> on the MecSimCalc platform.`,
+      desc: `Collaborated on developing an AI tool using ChatGPT API for creating apps using <span style="color: #C69749;">TypeScript</span> and <span style="color: #C69749;">React</span> on the MecSimCalc platform.`,
       weblink: "https://mecsimcalc.com/",
     },
     {
       name: "SPE Ualberta",
       img: "/img/spe.png",
-      desc: `Developed and designed the official website for the Petroleum Engineering Department, improving accessibility and information dissemination. Made using <span style="color: #C69749;">React Js</span>.`,
+      desc: `Developed and designed the official website for the SPE group in my University, improving accessibility and information dissemination. Made using <span style="color: #C69749;">React Js</span>.`,
     },
     {
       name: "Ravon Ecommerce",
@@ -55,14 +56,14 @@ export default function Work() {
   const pete = [
     {
       name: "PIPESIM SIMULAION",
-      description: `Designed and optimized artificial lift systems (Gas Lift and ESP) to increase oil production rates from under-saturated
+      description: `Utilized Schlumberger PIPESIM to designe and optimize artificial lift systems (Gas Lift and ESP) to increase oil production rates from under-saturated
       carbonate reservoirs. Below is the link to the project:`,
       link: "https://drive.google.com/drive/folders/1qDO8NVaJOgjPhXwST1qSFzJ9AEGVAbL-?usp=drive_link",
       disp: "Project Link",
     },
     {
       name: "Design of a Bit Hydraulics Program",
-      description: `Developed a hydraulic design program for a vertical well, recommending optimal drilling fluid flow rate and bit nozzle sizes
+      description: `Developed a hydraulic design program for a 14,000ft vertical well, recommending optimal drilling fluid flow rate and bit nozzle sizes
       to maximize hydraulic energy and drilling rate. Determined specifications for drilling fluid pumps, considering technical
       feasibility, safety, and economic factors. Below is the link to the project:`,
       link: "https://drive.google.com/drive/folders/1KP5OrA5Kmxs2QQIP5q7IH1Y8hvxgEkq1?usp=sharing",
