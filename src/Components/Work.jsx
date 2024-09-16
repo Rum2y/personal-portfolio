@@ -41,9 +41,9 @@ export default function Work() {
       weblink: "https://mecsimcalc.com/",
     },
     {
-      name: "SPE Ualberta",
+      name: "SPE Ualberta (In development)",
       img: "/img/spe.png",
-      desc: `Developed and designed the official website for the SPE group in my University, improving accessibility and information dissemination. Made using <span style="color: #C69749;">React Js</span>.`,
+      desc: `Currently developing and designing the official website for the SPE group in my University, improving accessibility and information dissemination. Made using <span style="color: #C69749;">React Js</span>.`,
     },
     {
       name: "Ravon Ecommerce",
