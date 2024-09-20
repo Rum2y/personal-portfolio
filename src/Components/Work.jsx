@@ -27,8 +27,8 @@ export default function Work() {
         breakpoint: 1280,
         settings: {
           slidesToShow: 1,
-          // speed: 100,
-          // autoplay: false,
+          speed: 100,
+          autoplay: false,
           swipeToSlide: true,
         },
       },
@@ -82,6 +82,7 @@ export default function Work() {
       <h4 className="text-[#C69749] font-medium text-xl mb-2">
         Web Design Projects
       </h4>
+      <h6 className="xl:hidden text-[#B0B0B0] mb-1">{`swipe to view more >>`}</h6>
       <div className="">
         <Slider {...settings}>
           {webDev.map((el, index) => (
@@ -100,7 +101,7 @@ export default function Work() {
                 className="group"
               >
                 <CardActionArea
-                  sx={{ padding: { xs: "0 0px", md: "0 20px" } }}
+                  sx={{ padding: { xs: "0 0px", lg: "0 20px" } }}
                   className="group-hover:scale-105 transition-transform duration-300"
                 >
                   <CardMedia
