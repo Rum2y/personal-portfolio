@@ -27,8 +27,8 @@ export default function Work() {
         breakpoint: 1280,
         settings: {
           slidesToShow: 1,
-          speed: 100,
-          autoplay: false,
+          // speed: 100,
+          // autoplay: false,
           swipeToSlide: true,
         },
       },
