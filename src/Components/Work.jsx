@@ -18,8 +18,8 @@ export default function Work() {
     slidesToScroll: 1,
     swipeToSlide: true,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 100,
+    speed: 1000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
     pauseOnHover: true,
     responsive: [
@@ -27,7 +27,9 @@ export default function Work() {
         breakpoint: 1280,
         settings: {
           slidesToShow: 1,
-          speed: 6000,
+          speed: 100,
+          autoplay: false,
+          swipeToSlide: true,
         },
       },
     ],
@@ -83,28 +85,42 @@ export default function Work() {
       <div className="">
         <Slider {...settings}>
           {webDev.map((el, index) => (
-            <a href={el?.weblink} target="_blank" className="no-underline">
+            <a
+              href={el?.weblink}
+              target="_blank"
+              className="no-underline group"
+              key={index}
+            >
               <Card
-                key={index}
                 sx={{
                   boxShadow: "none",
                   border: "none",
                   backgroundColor: "transparent",
                 }}
+                className="group"
               >
-                <CardActionArea sx={{ padding: "0 20px" }}>
+                <CardActionArea
+                  sx={{ padding: { xs: "0 0px", md: "0 20px" } }}
+                  className="group-hover:scale-105 transition-transform duration-300"
+                >
                   <CardMedia
                     component="img"
                     height="140"
                     image={el.img}
-                    alt="green iguana"
+                    alt={el.name}
+                    className="transition-transform duration-300"
                   />
                   <CardContent>
                     <Typography
                       gutterBottom
                       variant="h5"
                       component="div"
-                      sx={{ color: "#B0B0B0" }}
+                      sx={{
+                        color: "#B0B0B0",
+                        borderBottom: "2px solid transparent",
+                        transition: "border-color 0.3s ease",
+                      }}
+                      className="group-hover:border-[#C69749]" // Gold underline on hover
                     >
                       {el.name}
                     </Typography>
