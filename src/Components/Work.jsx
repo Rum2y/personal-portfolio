@@ -27,8 +27,8 @@ export default function Work() {
         breakpoint: 1280,
         settings: {
           slidesToShow: 1,
-          speed: 100,
-          autoplay: false,
+          // speed: 100,
+          // autoplay: false,
           swipeToSlide: true,
         },
       },
@@ -101,7 +101,7 @@ export default function Work() {
                 className="group"
               >
                 <CardActionArea
-                  sx={{ padding: { xs: "0 0px", lg: "0 20px" } }}
+                  sx={{ padding: { xs: "0 10px", lg: "0 20px" } }}
                   className="group-hover:scale-105 transition-transform duration-300"
                 >
                   <CardMedia
