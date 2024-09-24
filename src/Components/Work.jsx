@@ -43,7 +43,7 @@ export default function Work() {
       weblink: "https://mecsimcalc.com/",
     },
     {
-      name: "SPE Ualberta (In development)",
+      name: "SPE Ualberta",
       img: "/img/spe.png",
       desc: `Currently developing and designing the official website for the SPE group in my University, improving accessibility and information dissemination. Made using <span style="color: #C69749;">React Js</span>.`,
     },
@@ -52,6 +52,18 @@ export default function Work() {
       img: "/img/ravon.png",
       desc: `On this ecommerce site, you can buy items, add items to wishlist, and more. It was made using <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>, <span style="color: #C69749;">Node</span>, and <span style="color: #C69749;">Bootstrap</span>.`,
       weblink: "https://ravon-ecommerce.netlify.app/#",
+    },
+    {
+      name: "Todo-list app",
+      img: "/img/todo.png",
+      desc: `This is a typical todo list app where you can add, schedule, complete and remove tasks from your list. It was made using <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>`,
+      weblink: "https://rumzy-todo-list-app.netlify.app/",
+    },
+    {
+      name: "Pong game",
+      img: "/img/pong.png",
+      desc: `This is a single player ping pong game played against AI. It was made using <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>`,
+      weblink: "https://rumzy-pong-game.netlify.app/",
     },
   ];
 
@@ -123,7 +135,10 @@ export default function Work() {
                       }}
                       className="group-hover:border-[#C69749]" // Gold underline on hover
                     >
-                      {el.name}
+                      {el.name}{" "}
+                      {!("weblink" in el) && (
+                        <span className="text-[#C69749]">{`(In development)`}</span>
+                      )}
                     </Typography>
                     <Typography
                       variant="body2"
