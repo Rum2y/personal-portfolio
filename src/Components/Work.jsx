@@ -50,7 +50,7 @@ export default function Work() {
     {
       name: "Ravon Ecommerce",
       img: "/img/ravon.png",
-      desc: `On this ecommerce site, you can buy items, add items to wishlist, and more. It was made using <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>, <span style="color: #C69749;">Node</span>, and <span style="color: #C69749;">Bootstrap</span>.`,
+      desc: `On this ecommerce site, you can buy items, add items to wishlist, and more. It was made using H%M and Asos API, <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>, <span style="color: #C69749;">Node</span>, and <span style="color: #C69749;">Bootstrap</span>.`,
       weblink: "https://ravon-ecommerce.netlify.app/#",
     },
     {
