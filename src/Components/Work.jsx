@@ -14,7 +14,7 @@ export default function Work() {
     dots: false,
     arrows: false,
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 2.1,
     slidesToScroll: 1,
     swipeToSlide: true,
     autoplay: true,
@@ -26,7 +26,7 @@ export default function Work() {
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.05,
           // speed: 100,
           // autoplay: false,
           swipeToSlide: true,
