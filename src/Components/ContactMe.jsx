@@ -49,15 +49,31 @@ export default function ContactMe() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const data = new FormData(e.target);
     const formData = Object.fromEntries(data.entries());
-    axios.post(`${import.meta.env.VITE_FORM_API}`, formData);
 
-    e.target.reset();
-    handleOpen();
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_FORM_API}`,
+        data
+      );
+      e.target.reset();
+      handleOpen();
+      console.log("Success:", response.data);
+    } catch (error) {
+      // Error handling
+      console.error("Error:", error);
+      if (error.response) {
+        alert(`Error: ${error.response.data.message}`);
+      } else if (error.request) {
+        alert("Network error. Please check your connection.");
+      } else {
+        alert("Request setup error.");
+      }
+    }
   };
 
   return (
