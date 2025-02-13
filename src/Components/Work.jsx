@@ -46,6 +46,7 @@ export default function Work() {
       name: "SPE Ualberta",
       img: "/img/spe.png",
       desc: `Currently developing and designing the official website for the SPE group in my University, improving accessibility and information dissemination. Made using <span style="color: #C69749;">React Js</span>.`,
+      weblink: "https://spe-kohl.vercel.app/",
     },
     {
       name: "Ravon Ecommerce",
