@@ -9,7 +9,7 @@ export default function Home() {
             Hi, I am Adejumo Iyinoluwa,
           </h4>
           <h1 className="text-[#E0E0E0] xs:text-[2.5rem] lg:text-[4rem] lg:leading-[4.5rem] xl:text-[5.5rem] font-[350] xs:leading-[3rem] xl:leading-[6rem] xs:text-center lg:text-left">
-            PETROLEUM ENGINEER & FRONTEND WEB DEVELOPER
+            PETROLEUM ENGINEER & SOFTWARE DEVELOPER
           </h1>
         </div>
         <div className="xs:w-full xl:w-[60%] mt-[6rem]">
