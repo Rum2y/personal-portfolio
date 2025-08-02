@@ -92,7 +92,12 @@ function MainPage() {
       <Divider />
       <div className="absolute bottom-5">
         <Stack spacing={2} direction="column">
-          <Button variant="contained" sx={style} href="/resume/Resume.pdf">
+          <Button
+            variant="contained"
+            sx={style}
+            href="/resume/Resume.pdf"
+            target="_blank"
+          >
             <ReceiptIcon sx={{ mr: 1 }} />
             Resume
           </Button>
@@ -100,7 +105,7 @@ function MainPage() {
             variant="contained"
             sx={style}
             href="https://github.com/Rum2y"
-            target="blank"
+            target="_blank"
           >
             <GitHubIcon sx={{ mr: 1 }} />
             Github
