@@ -24,6 +24,7 @@ export default function Skills() {
         "Bootstrap",
         "Material UI",
         "Tailwind CSS",
+        "Express JS",
       ],
     },
     {

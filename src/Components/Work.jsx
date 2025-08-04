@@ -1,20 +1,66 @@
 import Cards from "./Card";
-import Typography from "@mui/material/Typography";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { useState, useEffect } from "react";
 import Chips from "./Chips";
 import Button from "@mui/material/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
+import DownloadIcon from "@mui/icons-material/Download";
 import Framer from "../Framer";
 
 export default function Work() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Example breakpoint
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const timelineLayout = isMobile ? "1-column-left" : "2-columns";
+
   const webDev = [
     {
+      name: "Unisettle",
+      img: "/img/unisettle_logo.PNG",
+      desc: "Developed a full-stack mobile app for helping international students to setlle in Canada. It has an active community, job board, and more.",
+      date: "July 2025 - Present",
+      code: [
+        "React Native",
+        "Node.js",
+        "Express",
+        "TypeScript",
+        "Appwrite",
+        "Tailwind CSS",
+        "Stripe",
+      ],
+      links: [
+        {
+          name: "Landing Page",
+          url: "https://unisettle.vercel.app/",
+          icon: <LanguageIcon />,
+        },
+        {
+          name: "Download App",
+          url: "https://github.com/Rum2y/Unisettle",
+          icon: <DownloadIcon />,
+        },
+      ],
+    },
+    {
       name: "MecSimCalc",
-      img: "/img/mec.png",
-      desc: `Collaborated on developing an AI-assisted app generator using the ChatGPT API. Contributed to dynamic form generation, component rendering, and user input validation logic using TypeScript and React. Integrated Material UI for styling and ensured responsiveness across devices.`,
+      img: "/img/mecsimcalc_logo.jpg",
+      desc: "Contributed to an AI-assisted app generator with ChatGPT API, using TypeScript, React, and Material UI.",
+      date: "June 2023 - August 2023",
       code: ["TypeScript", "React JS", "ChatGPT API", "Material UI"],
+
       links: [
         {
           name: "Live Demo",
@@ -25,8 +71,9 @@ export default function Work() {
     },
     {
       name: "SPE UAlberta",
-      img: "/img/spe.png",
-      desc: `Designed and developed the official website for the SPE student chapter at the University of Alberta. Implemented a clean, mobile-first interface using React, Tailwind, and Material UI to improve event visibility, membership registration, and content management. Continuously updated based on user feedback.`,
+      img: "/img/logo_2.jpg",
+      desc: "Designed and built the official SPE UAlberta website using React, Tailwind, and Material UI.",
+      date: "August 2024 - December 2024",
       code: ["React JS", "Material UI", "Tailwind CSS"],
       links: [
         {
@@ -41,28 +88,30 @@ export default function Work() {
         },
       ],
     },
-    // {
-    //   name: "Portfolio Website",
-    //   img: "/img/portfolio.png",
-    //   desc: `Developed a personal portfolio website to showcase my projects and skills. Implemented a clean, modern design using React and Tailwind CSS, ensuring a responsive layout for all devices.`,
-    //   code: ["React JS", "Tailwind CSS"],
-    //   links: [
-    //     {
-    //       name: "Live Demo",
-    //       url: "https://my-portfolio.com/",
-    //       icon: <LanguageIcon />,
-    //     },
-    //     {
-    //       name: "GitHub",
-    //       url: "https://github.com/Rum2y/personal-portfolio",
-    //       icon: <GitHubIcon />,
-    //     },
-    //   ],
-    // },
+    {
+      name: "Portfolio Website",
+      img: "/logo.png",
+      desc: "Created a personal portfolio with React and Tailwind CSS to showcase my projects and skills.",
+      date: "January 2025 - Present",
+      code: ["React JS", "Tailwind CSS", "Material UI"],
+      links: [
+        {
+          name: "Live Demo",
+          url: "https://iyinoluwaadejumo.vercel.app/",
+          icon: <LanguageIcon />,
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/Rum2y/personal-portfolio",
+          icon: <GitHubIcon />,
+        },
+      ],
+    },
     {
       name: "Ravon Ecommerce",
-      img: "/img/ravon.png",
-      desc: `Built a fully functional ecommerce site with features like product browsing, wishlist management, and shopping cart. Utilized APIs to fetch live data from H&M and ASOS. Implemented frontend with HTML, CSS, Bootstrap, and handled backend logic and routes using Node.js.`,
+      img: "/img/ravon_logo.png",
+      desc: "Built a full ecommerce site with real product data, cart features, and a Node.js backend.",
+      date: "July 2022 - August 2022",
       code: ["HTML", "CSS", "JavaScript", "Node.js", "Bootstrap"],
       links: [
         {
@@ -108,102 +157,80 @@ export default function Work() {
           Web Design Projects
         </h4>
       </Framer>
-      <div className="flex gap-5 flex-col w-full">
-        {webDev.map((el, index) => {
-          return (
-            <Framer>
-              <div
-                className={`flex gap-5 mb-[5rem] ${
-                  index % 2 !== 0
-                    ? "xl:flex-row-reverse flex-col"
-                    : "xl:flex-row flex-col"
-                }`}
-                key={index}
-              >
-                <div className="xl:w-1/2 w-full mb-5 xl:mb-0">
-                  <img
-                    src={el.img}
-                    alt={el.name}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: "8px",
-                    }}
-                  />
-                </div>
-                <div className="xl:w-1/2 w-full xl:px-10">
-                  <Typography
-                    variant="h3"
-                    component="div"
-                    sx={{
+      <VerticalTimeline animate={true} layout={timelineLayout}>
+        {webDev.map((el, index) => (
+          <VerticalTimelineElement
+            key={index}
+            date={el.date}
+            dateClassName="text-[white] mx-5"
+            className="vertical-timeline-element--work"
+            contentArrowStyle={{ borderRight: "7px solid  #C69749" }}
+            contentStyle={{
+              background: "#1E1E1E",
+              color: "#E0E0E0",
+              border: "1px solid #C69749",
+            }}
+            iconStyle={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#1E1E1E",
+            }}
+            icon={
+              <img
+                src={el.img}
+                alt={el.name}
+                className="w-[80%] h-[80%] rounded-full"
+              />
+            }
+          >
+            <h3
+              className="vertical-timeline-element-title"
+              style={{ fontSize: "1.5rem", fontWeight: "bold" }}
+            >
+              {el.name}
+            </h3>
+            <p
+              className="vertical-timeline-element-desc"
+              style={{ marginBottom: "10px" }}
+            >
+              {el.desc}
+            </p>
+            <Chips items={el.code} />
+            <div className="flex mt-5">
+              {el.links.map((link, index) => (
+                <Button
+                  key={index}
+                  variant="outlined"
+                  sx={{
+                    color: "#C69749",
+                    borderColor: "#C69749",
+                    "&:hover": {
+                      backgroundColor: "#B08B3D",
+                      borderColor: "#B08B3D",
                       color: "#E0E0E0",
-                      marginBottom: "20px",
-                      textAlign: "center",
-                      fontSize: "2.5rem",
+                    },
+                    margin: "0 5px",
+                  }}
+                  href={link.url}
+                  target="_blank"
+                >
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
                     }}
                   >
-                    {el.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#B0B0B0",
-                      fontSize: {
-                        xs: "1.2rem",
-                        xl: "1.5rem",
-                      },
-                      lineHeight: {
-                        xs: "1.4",
-                        xl: "1.5",
-                      },
-                      textAlign: "center",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    {el.desc}
-                  </Typography>
-
-                  <div className="flex flex-wrap gap-2 mt-3 justify-center mb-10">
-                    <Chips items={el.code} />
-                  </div>
-                  <div className="flex justify-center mt-5">
-                    {el.links.map((link, index) => (
-                      <Button
-                        key={index}
-                        variant="outlined"
-                        sx={{
-                          color: "#C69749",
-                          borderColor: "#C69749",
-                          "&:hover": {
-                            backgroundColor: "#B08B3D",
-                            borderColor: "#B08B3D",
-                            color: "#E0E0E0",
-                          },
-                          margin: "0 5px",
-                        }}
-                        href={link.url}
-                        target="_blank"
-                      >
-                        <span
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "8px",
-                          }}
-                        >
-                          {link.icon}
-                          {link.name}
-                        </span>
-                      </Button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Framer>
-          );
-        })}
-      </div>
+                    {link.icon}
+                    {link.name}
+                  </span>
+                </Button>
+              ))}
+            </div>
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
 
       <Framer>
         <div className="mt-10">
