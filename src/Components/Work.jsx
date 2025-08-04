@@ -35,7 +35,6 @@ export default function Work() {
       code: [
         "React Native",
         "Node.js",
-        "Express",
         "TypeScript",
         "Appwrite",
         "Tailwind CSS",
@@ -49,7 +48,7 @@ export default function Work() {
         },
         {
           name: "Download App",
-          url: "https://github.com/Rum2y/Unisettle",
+          url: "",
           icon: <DownloadIcon />,
         },
       ],
@@ -74,7 +73,7 @@ export default function Work() {
       img: "/img/logo_2.jpg",
       desc: "Designed and built the official SPE UAlberta website using React, Tailwind, and Material UI.",
       date: "August 2024 - December 2024",
-      code: ["React JS", "Material UI", "Tailwind CSS"],
+      code: ["React JS", "TypeScript", "Material UI", "Tailwind CSS"],
       links: [
         {
           name: "Live Demo",
@@ -93,7 +92,7 @@ export default function Work() {
       img: "/logo.png",
       desc: "Created a personal portfolio with React and Tailwind CSS to showcase my projects and skills.",
       date: "January 2025 - Present",
-      code: ["React JS", "Tailwind CSS", "Material UI"],
+      code: ["React JS", "TypeScript", "Tailwind CSS", "Material UI"],
       links: [
         {
           name: "Live Demo",
@@ -154,7 +153,7 @@ export default function Work() {
           <h6 className="text-[#B0B0B0]">Explore some of my Projects</h6>
         </div>
         <h4 className="text-[#C69749] font-medium text-xl mb-2">
-          Web Design Projects
+          Software Development Projects
         </h4>
       </Framer>
       <VerticalTimeline animate={true} layout={timelineLayout}>
@@ -180,7 +179,7 @@ export default function Work() {
               <img
                 src={el.img}
                 alt={el.name}
-                className="w-[80%] h-[80%] rounded-full"
+                className="w-[90%] h-[90%] rounded-full"
               />
             }
           >
