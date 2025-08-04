@@ -24,7 +24,7 @@ export default function Work() {
       ],
     },
     {
-      name: "SPE Ualberta",
+      name: "SPE UAlberta",
       img: "/img/spe.png",
       desc: `Designed and developed the official website for the SPE student chapter at the University of Alberta. Implemented a clean, mobile-first interface using React, Tailwind, and Material UI to improve event visibility, membership registration, and content management. Continuously updated based on user feedback.`,
       code: ["React JS", "Material UI", "Tailwind CSS"],
@@ -41,6 +41,24 @@ export default function Work() {
         },
       ],
     },
+    // {
+    //   name: "Portfolio Website",
+    //   img: "/img/portfolio.png",
+    //   desc: `Developed a personal portfolio website to showcase my projects and skills. Implemented a clean, modern design using React and Tailwind CSS, ensuring a responsive layout for all devices.`,
+    //   code: ["React JS", "Tailwind CSS"],
+    //   links: [
+    //     {
+    //       name: "Live Demo",
+    //       url: "https://my-portfolio.com/",
+    //       icon: <LanguageIcon />,
+    //     },
+    //     {
+    //       name: "GitHub",
+    //       url: "https://github.com/Rum2y/personal-portfolio",
+    //       icon: <GitHubIcon />,
+    //     },
+    //   ],
+    // },
     {
       name: "Ravon Ecommerce",
       img: "/img/ravon.png",
