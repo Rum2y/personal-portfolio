@@ -12,6 +12,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useCallback, useEffect, useState } from "react";
+import { loadSlim } from "@tsparticles/slim";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import Button from "@mui/material/Button";
@@ -26,6 +29,26 @@ const drawerWidth = 300;
 function MainPage() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+  const [init, setInit] = useState(false);
+
+  // this should be run only once per application lifetime
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      // starting from v2 you can add only the features you need reducing the bundle size
+      //await loadAll(engine);
+      //await loadFull(engine);
+      await loadSlim(engine);
+      //await loadBasic(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -116,115 +139,201 @@ function MainPage() {
   );
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-          backgroundColor: "#121212",
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ ml: 0, display: { sm: "none" } }}
+    <>
+      {init && (
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+          options={{
+            background: {
+              color: {
+                value: "#121212",
+              },
+            },
+            fpsLimit: 120,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "slow",
+                },
+                resize: true,
+              },
+              modes: {
+                push: {
+                  quantity: 4,
+                },
+                slow: {
+                  factor: 0.2,
+                  radius: 100,
+                },
+              },
+            },
+            particles: {
+              color: {
+                value: "#ffffff",
+              },
+              links: {
+                color: "#ffffff",
+                distance: 150,
+                enable: true,
+                opacity: 0.1,
+                width: 1,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outModes: {
+                  default: "bounce",
+                },
+                random: false,
+                speed: 2,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  area: 800,
+                },
+                value: 100,
+              },
+              opacity: {
+                value: 0.2,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                value: { min: 1, max: 4 },
+              },
+            },
+            detectRetina: true,
+          }}
+        />
+      )}
+      <Box sx={{ display: "flex" }}>
+        <AppBar
+          position="fixed"
+          sx={{
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            ml: { sm: `${drawerWidth}px` },
+            backgroundColor: "#121212",
+          }}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ ml: 0, display: { sm: "none" } }}
+            >
+              <MenuIcon sx={{ fontSize: "2rem" }} />
+            </IconButton>
+            <div className="w-full flex xs:justify-end lg:justify-between">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ color: "#B0B0B0", display: { xs: "none", md: "block" } }}
+              >
+                Edmonton, AB Canada
+              </Typography>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  color: "#B0B0B0",
+                  paddingX: 2,
+                  fontSize: { xs: "1rem", md: "1.2rem" },
+                }}
+              >
+                <a
+                  href="mailto:iyinade64@gmail.com"
+                  className="px-4 hover:text-[#C69749]"
+                >
+                  iyinade64@gmail.com
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/iyinoluwa-adejumo-b7137b241/"
+                  target="blank"
+                  className="hover:text-[#C69749]"
+                >
+                  LinkedIn
+                </a>
+              </Typography>
+            </div>
+          </Toolbar>
+        </AppBar>
+        <Box
+          component="nav"
+          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          aria-label="mailbox folders"
+        >
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            onTransitionEnd={handleDrawerTransitionEnd}
+            onClose={handleDrawerClose}
+            ModalProps={{
+              keepMounted: true,
+            }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+              },
+            }}
           >
-            <MenuIcon sx={{ fontSize: "2rem" }} />
-          </IconButton>
-          <div className="w-full flex xs:justify-end lg:justify-between">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ color: "#B0B0B0", display: { xs: "none", md: "block" } }}
-            >
-              Edmonton, AB Canada
-            </Typography>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{
-                color: "#B0B0B0",
-                paddingX: 2,
-                fontSize: { xs: "1rem", md: "1.2rem" },
-              }}
-            >
-              <a
-                href="mailto:iyinade64@gmail.com"
-                className="px-4 hover:text-[#C69749]"
-              >
-                iyinade64@gmail.com
-              </a>
-              <a
-                href="https://www.linkedin.com/in/iyinoluwa-adejumo-b7137b241/"
-                target="blank"
-                className="hover:text-[#C69749]"
-              >
-                LinkedIn
-              </a>
-            </Typography>
-          </div>
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onTransitionEnd={handleDrawerTransitionEnd}
-          onClose={handleDrawerClose}
-          ModalProps={{
-            keepMounted: true,
-          }}
+            {drawer}
+          </Drawer>
+          <Drawer
+            variant="permanent"
+            sx={{
+              display: { xs: "none", sm: "block" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+                boxShadow: "none",
+                borderRight: "none",
+              },
+            }}
+            open
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+        <Box
+          component="main"
           sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
+            flexGrow: 1,
+            p: { xs: 2, md: 10 },
+            width: { xs: `calc(100% - ${drawerWidth}px)` },
+            zIndex: 1,
+            position: "relative",
           }}
         >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: "none", sm: "block" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-              boxShadow: "none",
-              borderRight: "none",
-            },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
+          <Toolbar />
+          <Home />
+          <Skills />
+          <Work />
+          <ContactMe />
+        </Box>
       </Box>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: { xs: 2, md: 10 },
-          width: { xs: `calc(100% - ${drawerWidth}px)` },
-        }}
-      >
-        <Toolbar />
-        <Home />
-        <Skills />
-        <Work />
-        <ContactMe />
-      </Box>
-    </Box>
+    </>
   );
 }
 
