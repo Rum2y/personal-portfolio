@@ -6,7 +6,7 @@ export default function Home() {
       <div className="lg:mb-[10rem] mb-[5rem]" id="Home">
         <div className="mt-[4rem] xs:w-full lg:w-3/4">
           <h4 className="text-[#C69749] font-medium text-2xl mb-2 xs:text-center lg:text-left">
-            Hi, I am Adejumo Iyinoluwa,
+            Hi, I am Iyinoluwa Adejumo,
           </h4>
           <h1 className="text-[#E0E0E0] xs:text-[2.5rem] lg:text-[4rem] lg:leading-[4.5rem] xl:text-[5.5rem] font-[350] xs:leading-[3rem] xl:leading-[6rem] xs:text-center lg:text-left">
             PETROLEUM ENGINEER & SOFTWARE DEVELOPER
