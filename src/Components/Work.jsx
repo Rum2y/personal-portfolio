@@ -80,117 +80,123 @@ export default function Work() {
   ];
 
   return (
-    <Framer>
-      <div className="mb-5 mt-[10rem]" id="Work">
-        <h1 className="text-[#E0E0E0] text-[4rem] font-light">MY WORK</h1>
-        <h6 className="text-[#B0B0B0]">Explore some of my Projects</h6>
-      </div>
-      <h4 className="text-[#C69749] font-medium text-xl mb-2">
-        Web Design Projects
-      </h4>
+    <>
+      <Framer>
+        <div className="mb-5 mt-[10rem]" id="Work">
+          <h1 className="text-[#E0E0E0] text-[4rem] font-light">MY WORK</h1>
+          <h6 className="text-[#B0B0B0]">Explore some of my Projects</h6>
+        </div>
+        <h4 className="text-[#C69749] font-medium text-xl mb-2">
+          Web Design Projects
+        </h4>
+      </Framer>
       <div className="flex gap-5 flex-col w-full">
         {webDev.map((el, index) => {
           return (
-            <div
-              className={`flex gap-5 mb-[5rem] ${
-                index % 2 !== 0
-                  ? "xl:flex-row-reverse flex-col"
-                  : "xl:flex-row flex-col"
-              }`}
-              key={index}
-            >
-              <div className="xl:w-1/2 w-full mb-5 xl:mb-0">
-                <img
-                  src={el.img}
-                  alt={el.name}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                  }}
-                />
-              </div>
-              <div className="xl:w-1/2 w-full xl:px-10">
-                <Typography
-                  variant="h3"
-                  component="div"
-                  sx={{
-                    color: "#E0E0E0",
-                    marginBottom: "20px",
-                    textAlign: "center",
-                    fontSize: "2.5rem",
-                  }}
-                >
-                  {el.name}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "#B0B0B0",
-                    fontSize: {
-                      xs: "1.2rem",
-                      xl: "1.5rem",
-                    },
-                    lineHeight: {
-                      xs: "1.4",
-                      xl: "1.5",
-                    },
-                    textAlign: "center",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {el.desc}
-                </Typography>
+            <Framer>
+              <div
+                className={`flex gap-5 mb-[5rem] ${
+                  index % 2 !== 0
+                    ? "xl:flex-row-reverse flex-col"
+                    : "xl:flex-row flex-col"
+                }`}
+                key={index}
+              >
+                <div className="xl:w-1/2 w-full mb-5 xl:mb-0">
+                  <img
+                    src={el.img}
+                    alt={el.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                    }}
+                  />
+                </div>
+                <div className="xl:w-1/2 w-full xl:px-10">
+                  <Typography
+                    variant="h3"
+                    component="div"
+                    sx={{
+                      color: "#E0E0E0",
+                      marginBottom: "20px",
+                      textAlign: "center",
+                      fontSize: "2.5rem",
+                    }}
+                  >
+                    {el.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#B0B0B0",
+                      fontSize: {
+                        xs: "1.2rem",
+                        xl: "1.5rem",
+                      },
+                      lineHeight: {
+                        xs: "1.4",
+                        xl: "1.5",
+                      },
+                      textAlign: "center",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {el.desc}
+                  </Typography>
 
-                <div className="flex flex-wrap gap-2 mt-3 justify-center mb-10">
-                  <Chips items={el.code} />
-                </div>
-                <div className="flex justify-center mt-5">
-                  {el.links.map((link, index) => (
-                    <Button
-                      key={index}
-                      variant="outlined"
-                      sx={{
-                        color: "#C69749",
-                        borderColor: "#C69749",
-                        "&:hover": {
-                          backgroundColor: "#B08B3D",
-                          borderColor: "#B08B3D",
-                          color: "#E0E0E0",
-                        },
-                        margin: "0 5px",
-                      }}
-                      href={link.url}
-                      target="_blank"
-                    >
-                      <span
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "8px",
+                  <div className="flex flex-wrap gap-2 mt-3 justify-center mb-10">
+                    <Chips items={el.code} />
+                  </div>
+                  <div className="flex justify-center mt-5">
+                    {el.links.map((link, index) => (
+                      <Button
+                        key={index}
+                        variant="outlined"
+                        sx={{
+                          color: "#C69749",
+                          borderColor: "#C69749",
+                          "&:hover": {
+                            backgroundColor: "#B08B3D",
+                            borderColor: "#B08B3D",
+                            color: "#E0E0E0",
+                          },
+                          margin: "0 5px",
                         }}
+                        href={link.url}
+                        target="_blank"
                       >
-                        {link.icon}
-                        {link.name}
-                      </span>
-                    </Button>
-                  ))}
+                        <span
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                          }}
+                        >
+                          {link.icon}
+                          {link.name}
+                        </span>
+                      </Button>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Framer>
           );
         })}
       </div>
 
-      <div className="mt-10">
-        <h4 className="text-[#C69749] font-medium text-xl mb-2">
-          Petroleum Design Projects
-        </h4>
-        <div className="flex gap-5 xs:flex-wrap xl:flex-nowrap">
-          <Cards arr={pete} width={"50%"} />
+      <Framer>
+        <div className="mt-10">
+          <h4 className="text-[#C69749] font-medium text-xl mb-2">
+            Petroleum Design Projects
+          </h4>
+          <div className="flex gap-5 xs:flex-wrap xl:flex-nowrap">
+            <Cards arr={pete} width={"50%"} />
+          </div>
         </div>
-      </div>
-    </Framer>
+      </Framer>
+    </>
   );
 }
