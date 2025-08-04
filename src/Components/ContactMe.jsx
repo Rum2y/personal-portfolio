@@ -78,7 +78,7 @@ export default function ContactMe() {
 
   return (
     <Framer>
-      <div className="mb-5 mt-[10rem]" id="Contact">
+      <div className="mb-5 lg:mt-[10rem] mt-[5rem]" id="Contact">
         <h1 className="text-[#E0E0E0] xs:text-[3rem] lg:text-[4rem] font-light">
           CONTACT ME
         </h1>

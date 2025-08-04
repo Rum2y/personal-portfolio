@@ -82,7 +82,7 @@ export default function Work() {
   return (
     <>
       <Framer>
-        <div className="mb-5 mt-[10rem]" id="Work">
+        <div className="mb-5 lg:mt-[10rem] mt-[5rem]" id="Work">
           <h1 className="text-[#E0E0E0] text-[4rem] font-light">MY WORK</h1>
           <h6 className="text-[#B0B0B0]">Explore some of my Projects</h6>
         </div>

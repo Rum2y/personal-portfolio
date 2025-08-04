@@ -3,7 +3,7 @@ import Framer from "../Framer";
 export default function Home() {
   return (
     <Framer>
-      <div className="mb-[10rem]" id="Home">
+      <div className="lg:mb-[10rem] mb-[5rem]" id="Home">
         <div className="mt-[4rem] xs:w-full lg:w-3/4">
           <h4 className="text-[#C69749] font-medium text-2xl mb-2 xs:text-center lg:text-left">
             Hi, I am Adejumo Iyinoluwa,
