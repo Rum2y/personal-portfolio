@@ -4,24 +4,31 @@ import Framer from "../Framer";
 export default function Skills() {
   const skills = [
     {
-      name: "Frontend Web Development (React, JavaScript, HTML, CSS)",
-      description:
-        "Experienced in building dynamic, responsive web applications using modern frontend technologies like React and JavaScript.",
+      name: "Programming Languages",
+      description: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Node.js",
+        "MATLAB",
+      ],
     },
     {
-      name: "Data Analysis and Visualization (Python, MATLAB)",
-      description:
-        "Proficient in analyzing large datasets and visualizing complex data using Python and MATLAB for engineering and technical projects.",
+      name: "Frameworks",
+      description: [
+        "React JS",
+        "Next JS",
+        "React Native",
+        "Bootstrap",
+        "Material UI",
+        "Tailwind CSS",
+      ],
     },
     {
-      name: "Microsoft Office",
-      description:
-        "Skilled in using Microsoft Office tools such as Word, Excel, and PowerPoint for documentation, data analysis, and presentations.",
-    },
-    {
-      name: "Reservoir Modeling",
-      description:
-        "Familiar with reservoir simulation and modeling techniques to analyze subsurface fluid flow and optimize production strategies.",
+      name: "Reservoir Engineering Tools",
+      description: ["PIPESIM", "CMG", "Well Logging"],
     },
   ];
 
@@ -31,8 +38,8 @@ export default function Skills() {
         <h1 className="text-[#E0E0E0] text-[4rem] font-light">MY SKILLS</h1>
         <h6 className="text-[#B0B0B0]">What I specialize in</h6>
       </div>
-      <div className="flex gap-5 flex-wrap">
-        <Cards arr={skills} width={"30%"} />
+      <div className="flex flex-wrap w-full gap-5">
+        <Cards arr={skills} width={"32%"} />
       </div>
     </Framer>
   );

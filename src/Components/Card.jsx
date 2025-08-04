@@ -1,5 +1,6 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import Chips from "./Chips";
 import Typography from "@mui/material/Typography";
 
 export default function Cards(props) {
@@ -11,7 +12,7 @@ export default function Cards(props) {
             key={index + 1}
             variant="outlined"
             sx={{
-              width: { lg: props.width },
+              width: { lg: props.width, xs: "100%" },
               backgroundImage: "linear-gradient(to right, #171616, #1a1a1a)",
             }}
           >
@@ -23,12 +24,19 @@ export default function Cards(props) {
               >
                 {el.name}
               </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: "#E0E0E0", fontSize: "1.125rem" }}
-              >
-                {el.description}
-              </Typography>
+              {typeof el.description === "object" ? (
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
+                  <Chips items={el.description} />
+                </div>
+              ) : (
+                <Typography
+                  variant="body2"
+                  sx={{ color: "#E0E0E0", fontSize: "1.125rem" }}
+                >
+                  {el.description}
+                </Typography>
+              )}
+
               <Typography
                 variant="p"
                 component="div"

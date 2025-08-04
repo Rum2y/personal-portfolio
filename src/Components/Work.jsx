@@ -1,70 +1,63 @@
-import Card from "@mui/material/Card";
 import Cards from "./Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import CardActionArea from "@mui/material/CardActionArea";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import Chips from "./Chips";
+import Button from "@mui/material/Button";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LanguageIcon from "@mui/icons-material/Language";
 import Framer from "../Framer";
 
 export default function Work() {
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    slidesToShow: 2.1,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 1.05,
-          // speed: 100,
-          // autoplay: false,
-          swipeToSlide: true,
-        },
-      },
-    ],
-  };
-
   const webDev = [
     {
       name: "MecSimCalc",
       img: "/img/mec.png",
-      desc: `Collaborated on developing an AI tool using ChatGPT API for creating apps using <span style="color: #C69749;">TypeScript</span> and <span style="color: #C69749;">React</span> on the MecSimCalc platform.`,
-      weblink: "https://mecsimcalc.com/",
+      desc: `Collaborated on developing an AI-assisted app generator using the ChatGPT API. Contributed to dynamic form generation, component rendering, and user input validation logic using TypeScript and React. Integrated Material UI for styling and ensured responsiveness across devices.`,
+      code: ["TypeScript", "React JS", "ChatGPT API", "Material UI"],
+      links: [
+        {
+          name: "Live Demo",
+          url: "https://mecsimcalc.com/",
+          icon: <LanguageIcon />,
+        },
+      ],
     },
     {
       name: "SPE Ualberta",
       img: "/img/spe.png",
-      desc: `Currently developing and designing the official website for the SPE group in my University, improving accessibility and information dissemination. Made using <span style="color: #C69749;">React Js</span>.`,
-      weblink: "https://spe-kohl.vercel.app/",
+      desc: `Designed and developed the official website for the SPE student chapter at the University of Alberta. Implemented a clean, mobile-first interface using React, Tailwind, and Material UI to improve event visibility, membership registration, and content management. Continuously updated based on user feedback.`,
+      code: ["React JS", "Material UI", "Tailwind CSS"],
+      links: [
+        {
+          name: "Live Demo",
+          url: "https://spe-kohl.vercel.app/",
+          icon: <LanguageIcon />,
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/Rum2y/SPE-Website",
+          icon: <GitHubIcon />,
+        },
+      ],
     },
     {
       name: "Ravon Ecommerce",
       img: "/img/ravon.png",
-      desc: `On this ecommerce site, you can buy items, add items to wishlist, and more. It was made using H%M and Asos API, <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>, <span style="color: #C69749;">Node</span>, and <span style="color: #C69749;">Bootstrap</span>.`,
-      weblink: "https://ravon-ecommerce.netlify.app/#",
-    },
-    {
-      name: "Todo-list app",
-      img: "/img/todo.png",
-      desc: `This is a typical todo list app where you can add, schedule, complete and remove tasks from your list. It was made using <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>`,
-      weblink: "https://rumzy-todo-list-app.netlify.app/",
-    },
-    {
-      name: "Pong game",
-      img: "/img/pong.png",
-      desc: `This is a single player ping pong game played against AI. It was made using <span style="color: #C69749;">HTML</span>, <span style="color: #C69749;">CSS</span>, <span style="color: #C69749;">Javascript</span>`,
-      weblink: "https://rumzy-pong-game.netlify.app/",
+      desc: `Built a fully functional ecommerce site with features like product browsing, wishlist management, and shopping cart. Utilized APIs to fetch live data from H&M and ASOS. Implemented frontend with HTML, CSS, Bootstrap, and handled backend logic and routes using Node.js.`,
+      code: ["HTML", "CSS", "JavaScript", "Node.js", "Bootstrap"],
+      links: [
+        {
+          name: "Live Demo",
+          url: "https://ravon-ecommerce.netlify.app/#",
+          icon: <LanguageIcon />,
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/Rum2y/Ravon-Ecommerce-site",
+          icon: <GitHubIcon />,
+        },
+      ],
     },
   ];
 
@@ -95,64 +88,101 @@ export default function Work() {
       <h4 className="text-[#C69749] font-medium text-xl mb-2">
         Web Design Projects
       </h4>
-      <h6 className="xl:hidden text-[#B0B0B0] mb-1">{`swipe to view more >>`}</h6>
-      <div className="">
-        <Slider {...settings}>
-          {webDev.map((el, index) => (
-            <a
-              href={el?.weblink}
-              target="_blank"
-              className="no-underline group"
+      <div className="flex gap-5 flex-col w-full">
+        {webDev.map((el, index) => {
+          return (
+            <div
+              className={`flex gap-5 mb-[5rem] ${
+                index % 2 !== 0
+                  ? "xl:flex-row-reverse flex-col"
+                  : "xl:flex-row flex-col"
+              }`}
               key={index}
             >
-              <Card
-                sx={{
-                  boxShadow: "none",
-                  border: "none",
-                  backgroundColor: "transparent",
-                }}
-                className="group"
-              >
-                <CardActionArea
-                  sx={{ padding: { xs: "0 10px", lg: "0 20px" } }}
-                  className="group-hover:scale-105 transition-transform duration-300"
+              <div className="xl:w-1/2 w-full mb-5 xl:mb-0">
+                <img
+                  src={el.img}
+                  alt={el.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                  }}
+                />
+              </div>
+              <div className="xl:w-1/2 w-full xl:px-10">
+                <Typography
+                  variant="h3"
+                  component="div"
+                  sx={{
+                    color: "#E0E0E0",
+                    marginBottom: "20px",
+                    textAlign: "center",
+                    fontSize: "2.5rem",
+                  }}
                 >
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={el.img}
-                    alt={el.name}
-                    className="transition-transform duration-300"
-                  />
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="div"
+                  {el.name}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#B0B0B0",
+                    fontSize: {
+                      xs: "1.2rem",
+                      xl: "1.5rem",
+                    },
+                    lineHeight: {
+                      xs: "1.4",
+                      xl: "1.5",
+                    },
+                    textAlign: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  {el.desc}
+                </Typography>
+
+                <div className="flex flex-wrap gap-2 mt-3 justify-center mb-10">
+                  <Chips items={el.code} />
+                </div>
+                <div className="flex justify-center mt-5">
+                  {el.links.map((link, index) => (
+                    <Button
+                      key={index}
+                      variant="outlined"
                       sx={{
-                        color: "#B0B0B0",
-                        borderBottom: "2px solid transparent",
-                        transition: "border-color 0.3s ease",
+                        color: "#C69749",
+                        borderColor: "#C69749",
+                        "&:hover": {
+                          backgroundColor: "#B08B3D",
+                          borderColor: "#B08B3D",
+                          color: "#E0E0E0",
+                        },
+                        margin: "0 5px",
                       }}
-                      className="group-hover:border-[#C69749]" // Gold underline on hover
+                      href={link.url}
+                      target="_blank"
                     >
-                      {el.name}{" "}
-                      {!("weblink" in el) && (
-                        <span className="text-[#C69749]">{`(In development)`}</span>
-                      )}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ color: "#E0E0E0", fontSize: "1.125rem" }}
-                      dangerouslySetInnerHTML={{ __html: el.desc }}
-                    />
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </a>
-          ))}
-        </Slider>
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                        }}
+                      >
+                        {link.icon}
+                        {link.name}
+                      </span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
+
       <div className="mt-10">
         <h4 className="text-[#C69749] font-medium text-xl mb-2">
           Petroleum Design Projects
