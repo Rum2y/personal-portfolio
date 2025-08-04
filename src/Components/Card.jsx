@@ -16,7 +16,7 @@ export default function Cards(props) {
               backgroundImage: "linear-gradient(to right, #171616, #1a1a1a)",
             }}
           >
-            <CardContent sx={{ padding: 5 }}>
+            <CardContent sx={{ padding: { xs: 2, md: 5 } }}>
               <Typography
                 variant="h5"
                 component="div"

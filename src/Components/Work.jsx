@@ -184,12 +184,9 @@ export default function Work() {
               />
             }
           >
-            <h3
-              className="vertical-timeline-element-title"
-              style={{ fontSize: "1.5rem", fontWeight: "bold" }}
-            >
+            <h4 className="vertical-timeline-element-title text-[1.2rem] lg:text-[1.5rem] font-bold ">
               {el.name}
-            </h3>
+            </h4>
             <p
               className="vertical-timeline-element-desc"
               style={{ marginBottom: "10px" }}
@@ -197,7 +194,7 @@ export default function Work() {
               {el.desc}
             </p>
             <Chips items={el.code} />
-            <div className="flex mt-5">
+            <div className="flex mt-2 lg:mt-5">
               {el.links.map((link, index) => (
                 <Button
                   key={index}
@@ -211,17 +208,19 @@ export default function Work() {
                       color: "#E0E0E0",
                     },
                     margin: "0 5px",
+                    marginBottom: {
+                      xs: "5px",
+                      md: "10px",
+                    },
+                    padding: {
+                      xs: "6px",
+                      md: "10px",
+                    },
                   }}
                   href={link.url}
                   target="_blank"
                 >
-                  <span
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                    }}
-                  >
+                  <span className="flex items-center gap-1 lg:gap-2 text-[.7rem] lg:text-base">
                     {link.icon}
                     {link.name}
                   </span>
