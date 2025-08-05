@@ -15,16 +15,17 @@ export default function Home() {
         <div className="xs:w-full xl:w-[60%] mt-[6rem]">
           <h4 className="text-[#C69749] font-medium text-xl mb-2">About Me</h4>
           <p className="text-[#E0E0E0] text-lg">
-            I am a passionate and driven individual with four years of academic
-            experience in Petroleum Engineering, complemented by three years of
-            self-taught programming. My journey into coding began out of
-            curiosity, and it has since become an essential part of my skill
-            set. Over the years, I’ve developed a strong foundation in frontend
-            web development, working with technologies like React, JavaScript,
-            and Tailwind CSS, while also applying my technical knowledge to
-            engineering projects. I am eager to merge my expertise in petroleum
-            engineering with my programming skills to solve real-world
-            challenges and drive innovation in both industries.
+            I am a passionate and driven individual with a degree in Petroleum
+            Engineering from the University of Alberta, backed by four years of
+            academic experience in the field. Alongside my engineering studies,
+            I spent the past three years teaching myself programming — a journey
+            that began out of curiosity and has since become a core part of my
+            skill set. I’ve built a strong foundation in frontend web
+            development, working with technologies like React, JavaScript, and
+            Tailwind CSS, and have applied my technical knowledge to both
+            engineering and software projects. I’m eager to merge my expertise
+            in petroleum engineering with my programming skills to solve
+            real-world challenges and drive innovation across both industries.
           </p>
         </div>
       </div>

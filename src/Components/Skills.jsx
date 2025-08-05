@@ -16,16 +16,28 @@ export default function Skills() {
       ],
     },
     {
-      name: "Frameworks",
+      name: "Frameworks & Libraries",
       description: [
         "React JS",
         "Next JS",
         "React Native",
+        "Express JS",
         "Bootstrap",
         "Material UI",
         "Tailwind CSS",
-        "Express JS",
       ],
+    },
+    {
+      name: "AI & Machine Learning",
+      description: ["OpenAI API (ChatGPT)", "Prompt Engineering"],
+    },
+    {
+      name: "Backend & Dev Tools",
+      description: ["Appwrite", "Firebase", "Git & GitHub"],
+    },
+    {
+      name: "APIs & Integrations",
+      description: ["Stripe Payments", "REST APIs", "Webhooks", "OAuth"],
     },
     {
       name: "Reservoir Engineering Tools",

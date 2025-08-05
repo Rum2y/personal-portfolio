@@ -56,9 +56,9 @@ export default function Work() {
     {
       name: "MecSimCalc",
       img: "/img/mecsimcalc_logo.jpg",
-      desc: "Contributed to an AI-assisted app generator with ChatGPT API, using TypeScript, React, and Material UI.",
+      desc: "Contributed to an AI-assisted app generator with OpenAI API, using TypeScript, React, and Material UI.",
       date: "June 2023 - August 2023",
-      code: ["TypeScript", "React JS", "ChatGPT API", "Material UI"],
+      code: ["TypeScript", "React JS", "OpenAI API (ChatGPT)", "Material UI"],
 
       links: [
         {
