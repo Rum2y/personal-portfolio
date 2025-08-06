@@ -34,11 +34,7 @@ function MainPage() {
   // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
+      // load the slim version of the particles engine
       await loadSlim(engine);
       //await loadBasic(engine);
     }).then(() => {
@@ -47,7 +43,7 @@ function MainPage() {
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    // console.log(container);
   };
 
   const handleDrawerClose = () => {

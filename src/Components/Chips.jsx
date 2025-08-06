@@ -1,6 +1,8 @@
 import Chip from "@mui/material/Chip";
 
 export default function Chips({ items }) {
+  if (!items || items.length === 0) return null;
+
   return (
     <>
       {items.map((item, index) => (

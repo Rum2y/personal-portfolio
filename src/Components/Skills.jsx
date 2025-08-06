@@ -41,7 +41,7 @@ export default function Skills() {
     },
     {
       name: "Reservoir Engineering Tools",
-      description: ["PIPESIM", "CMG", "Well Logging"],
+      description: ["PIPESIM", "CMG", "Well Logging", "Reservoir Engineering"],
     },
   ];
 
