@@ -107,7 +107,7 @@ export const projects = [
   ],
   [
     {
-      name: "PIPESIM SIMULAION",
+      name: "PIPESIM SIMULATION",
       desc: `Utilized Schlumberger PIPESIM to designe and optimize artificial lift systems (Gas Lift and ESP) to increase oil production rates from under-saturated
       carbonate reservoirs. Below is the link to the project:`,
       date: "January 2024 - April 2024",
