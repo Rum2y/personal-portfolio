@@ -1,4 +1,3 @@
-import Cards from "./Card";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
