@@ -16,6 +16,7 @@ export const projects = [
         "Appwrite",
         "Tailwind CSS",
         "Stripe",
+        "RevenueCat",
       ],
       links: [
         {
