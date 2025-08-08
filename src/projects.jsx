@@ -20,7 +20,7 @@ export const projects = [
       links: [
         {
           name: "Landing Page",
-          url: "https://unisettle.vercel.app/",
+          url: "https://unisettle.ca",
           icon: <LanguageIcon />,
         },
         {
