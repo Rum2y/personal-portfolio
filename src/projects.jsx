@@ -60,11 +60,6 @@ export const projects = [
           url: "https://spe-kohl.vercel.app/",
           icon: <LanguageIcon />,
         },
-        {
-          name: "GitHub",
-          url: "https://github.com/Rum2y/SPE-Website",
-          icon: <GitHubIcon />,
-        },
       ],
     },
     {
