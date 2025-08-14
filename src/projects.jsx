@@ -71,7 +71,7 @@ export const projects = [
       links: [
         {
           name: "Live Demo",
-          url: "https://iyinoluwaadejumo.vercel.app/",
+          url: "https://iyinoluwa.me",
           icon: <LanguageIcon />,
         },
         {
