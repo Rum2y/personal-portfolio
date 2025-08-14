@@ -1,13 +1,15 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
 import DownloadIcon from "@mui/icons-material/Download";
+import AndroidIcon from "@mui/icons-material/Android";
+import AppleIcon from "@mui/icons-material/Apple";
 
 export const projects = [
   [
     {
       name: "Unisettle",
       img: "/img/unisettle_logo.PNG",
-      desc: "Developed a full-stack mobile app for helping international students to setlle in Canada. It has an active community, job board, and more. (App still getting approved by Apple and Google)",
+      desc: "Developed a full-stack mobile app for helping international students to setlle in Canada. It has an active community, job board, and more. (App still getting approved by Google)",
       date: "July 2025 - Present",
       code: [
         "React Native",
@@ -25,11 +27,17 @@ export const projects = [
           icon: <LanguageIcon />,
         },
         {
-          name: "Download App",
+          name: "Download on iOS",
+          // This project is still in development, so we disable the links for now
+          url: "https://apps.apple.com/ca/app/unisettle/id6749332997",
+          icon: <AppleIcon />,
+        },
+        {
+          name: "Download on Android",
           disable: true,
           // This project is still in development, so we disable the links for now
           url: "",
-          icon: <DownloadIcon />,
+          icon: <AndroidIcon />,
         },
       ],
     },

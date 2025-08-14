@@ -107,7 +107,7 @@ export default function Work() {
               {el.desc}
             </p>
             <Chips items={el?.code} />
-            <div className="flex mt-2 lg:mt-5">
+            <div className="flex mt-2 lg:mt-5 flex-wrap">
               {el.links.map((link, index) => (
                 <Button
                   key={index}
