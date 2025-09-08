@@ -27,15 +27,12 @@ export const projects = [
         },
         {
           name: "Download on iOS",
-          // This project is still in development, so we disable the links for now
           url: "https://apps.apple.com/ca/app/unisettle/id6749332997",
           icon: <AppleIcon />,
         },
         {
           name: "Download on Android",
-          disable: true,
-          // This project is still in development, so we disable the links for now
-          url: "",
+          url: "https://play.google.com/store/apps/details?id=com.rumzy.unisettle",
           icon: <AndroidIcon />,
         },
       ],
