@@ -75,7 +75,7 @@ export const projects = [
       links: [
         {
           name: "Live Demo",
-          url: "https://iyinoluwa.me",
+          url: "https://iyinoluwa.site",
           icon: <LanguageIcon />,
         },
         {
